@@ -10,19 +10,19 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
-@RestController
+@Controller
 public class PostController {
 	@Autowired
 	private PostService guestBookService;
 	
 	@GetMapping(value="/list")
-	public ModelAndView list(Model model) {
+	public String list(Model model) {
 		List<Post> list = guestBookService.getList();
 		model.addAttribute("list", list);
 
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("index");
-		return mav;
+		return "index";
 	}
 	
 	
