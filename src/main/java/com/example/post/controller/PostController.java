@@ -22,6 +22,7 @@ public class PostController {
 
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("index");
+		System.out.println("TEst");
 		return "index";
 	}
 	
