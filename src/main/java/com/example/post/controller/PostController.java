@@ -26,7 +26,7 @@ public class PostController {
 	}
 	
 	
-	@RequestMapping(value="/post", method= RequestMethod.POST)
+	@RequestMapping(value="/add", method= RequestMethod.POST)
 	public ModelAndView insert(Post vo) {
 		guestBookService.insert(vo);
 
@@ -36,7 +36,7 @@ public class PostController {
 	}
 	
 	
-	@RequestMapping(value="/delete", method= RequestMethod.GET)
+	@RequestMapping(value="/del", method= RequestMethod.GET)
 	public ModelAndView delete(Post vo) {
 		guestBookService.delete(vo);
 
