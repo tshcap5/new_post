@@ -20,9 +20,6 @@ public class PostController {
 		List<Post> list = guestBookService.getList();
 		model.addAttribute("list", list);
 
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("index");
-		System.out.println("TEst1");
 		return "index";
 	}
 	
