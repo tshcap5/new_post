@@ -40,7 +40,6 @@
 				<td><a href="/del?idx=${vo.idx }">삭제</a></td>
 			</tr>
 			<tr>
-				<!-- 개행(\n)을 JSTL에서 사용할 수 없어서 page context에 다른 변수로 추가해줘야함 -->
 				<td>${fn:replace(vo.content, newLine, "<br>") }</td>
 			</tr>
 		</table>

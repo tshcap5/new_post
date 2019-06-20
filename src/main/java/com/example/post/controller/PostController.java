@@ -13,20 +13,23 @@ import java.util.List;
 @Controller
 public class PostController {
 	@Autowired
-	private PostService guestBookService;
+	private PostService postService;
 	
 	@GetMapping(value="/list")
-	public String list(Model model) {
-		List<Post> list = guestBookService.getList();
-		model.addAttribute("list", list);
+	public ModelAndView list() {
+		List<Post> list = postService.getList();
 
-		return "index";
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("index");
+		mav.addObject("list", list);
+
+		return mav;
 	}
 	
 	
 	@RequestMapping(value="/add", method= RequestMethod.POST)
 	public ModelAndView insert(Post vo) {
-		guestBookService.insert(vo);
+		postService.insert(vo);
 
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("index");
@@ -36,7 +39,7 @@ public class PostController {
 	
 	@RequestMapping(value="/del", method= RequestMethod.GET)
 	public ModelAndView delete(Post vo) {
-		guestBookService.delete(vo);
+		postService.delete(vo);
 
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("index");
