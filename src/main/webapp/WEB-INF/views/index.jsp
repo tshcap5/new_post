@@ -15,16 +15,16 @@
 <title>방명록</title>
 </head>
 <body>
-	<form action="/post/add" method="post">
+	<form action="/add" method="post">
 		<table border="1" width="500">
 			<tr>
 				<td>Name</td><td><input type="text" name="name"></td>
 			</tr>
 			<tr>
-				<td colspan=4><textarea name="content" cols=60 rows=5></textarea></td>
+				<td>Content</td><td colspan=2><textarea name="content" cols=60 rows=5></textarea></td>
 			</tr>
 			<tr>
-				<td colspan=4 align=right><input type="submit" VALUE=" 확인 "></td>
+				<td colspan=2 align=right><input type="submit" VALUE=" Write "></td>
 			</tr>
 		</table>
 	</form>
